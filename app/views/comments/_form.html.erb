@@ -1,7 +1,7 @@
 <%= form_for([@post, @post.comments.build]) do |f| %>
 	<p>
 		<%= f.label :name, value: 'First Name:' %><br>
-		<% f.text_field :name, placeholder: 'Enter Your First Name' %>
+		<%= f.text_field :name, placeholder: 'Enter Your First Name' %>
 	</p>
 	<p>
 		<%= f.label :body, value: 'Write Comment' %><br>
