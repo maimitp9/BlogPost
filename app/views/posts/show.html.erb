@@ -1,8 +1,11 @@
 <h3><%= @post.title %></h3> 
 <h4><%= @post.body %></h4>
 <p> Submitted <%= time_ago_in_words(@post.created_at) %> ago.</p>
-<h3>This is Comments</h3>
+<h3>Total <%= @post.comments.count %> Comments for this Post</h3>
+<%= render @post.comments %>
+<h3>Write your Comment</h3>
 <p>
 	<%= render 'comments/form' %>
 </p>
 <%= link_to 'Create New Post', new_post_path %> | <%= link_to 'Edit', edit_post_path %> | <%= link_to 'Delete', post_path, method: :delete, data: { confirm: 'Are you sure?'} %>
+ | <%= link_to 'Back', posts_path %>
